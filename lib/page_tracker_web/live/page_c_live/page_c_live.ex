@@ -10,6 +10,8 @@ defmodule PageTrackerWeb.PageCLive do
 
   @impl true
   def handle_params(params, _url, socket) do
-    {:noreply, socket |> assign(:tab, params["tab"])}
+    tab = params["tab"] || if(connected?(socket), do: Enum.random(~w[tab_1 tab_2]))
+
+    {:noreply, socket |> assign(:tab, tab)}
   end
 end
