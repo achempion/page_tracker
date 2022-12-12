@@ -1,6 +1,8 @@
 defmodule PageTrackerWeb.Router do
   use PageTrackerWeb, :router
 
+  alias PageTrackerWeb.RememberSessionPlug
+
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -15,7 +17,7 @@ defmodule PageTrackerWeb.Router do
   end
 
   scope "/", PageTrackerWeb do
-    pipe_through :browser
+    pipe_through [:browser, RememberSessionPlug]
 
     get "/", PageController, :home
 
