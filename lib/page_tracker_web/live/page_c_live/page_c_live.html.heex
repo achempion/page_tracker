@@ -1,0 +1,22 @@
+<h1 class="text-xl mb-4">Page C</h1>
+
+<.link
+patch={~p"/page_c/tab_1"}
+class={[@tab == "tab_1" && "border-b-2 border-blue-500", "bg-gray-100 px-4 py-2"]}
+>
+Tab 1
+</.link>
+
+<.link
+patch={~p"/page_c/tab_2"}
+class={[@tab == "tab_2" && "border-b-2 border-blue-500", "bg-gray-100 px-4 py-2"]}
+>
+Tab 2
+</.link>
+
+<div class="p-4 bg-gray-100 rounded-lg mt-4">
+  <.live_component module={Tab1Component} id="tab1" :if={@tab == "tab_1"} />
+  <.live_component module={Tab2Component} id="tab2" :if={@tab == "tab_2"} />
+</div>
+
+

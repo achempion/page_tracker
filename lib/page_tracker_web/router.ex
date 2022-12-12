@@ -18,6 +18,11 @@ defmodule PageTrackerWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+
+    live "/page_a", PageALive
+    live "/page_b", PageBLive
+    live "/page_c", PageCLive
+    live "/page_c/:tab", PageCLive
   end
 
   # Other scopes may use custom stacks.
