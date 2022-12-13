@@ -6,7 +6,7 @@ defmodule PageTracker.PageView do
     field :data, :map
     field :duration_ms, :integer
     field :page, :string
-    field :session_uuid, Ecto.UUID
+    field :session_id, Ecto.UUID
     field :uuid, Ecto.UUID
 
     timestamps()
@@ -15,7 +15,7 @@ defmodule PageTracker.PageView do
   @doc false
   def changeset(page_view, attrs) do
     page_view
-    |> cast(attrs, [:session_uuid, :page, :duration_ms, :uuid])
-    |> validate_required([:session_uuid, :page, :duration_ms, :uuid])
+    |> cast(attrs, [:session_id, :page, :duration_ms, :uuid])
+    |> validate_required([:session_id, :page, :duration_ms, :uuid])
   end
 end

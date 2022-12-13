@@ -3,7 +3,7 @@ defmodule PageTracker.Repo.Migrations.CreatePageViews do
 
   def change do
     create table(:page_views) do
-      add :session_uuid, :uuid
+      add :session_id, :uuid
       add :page, :string
       add :duration_ms, :integer
       add :data, :map

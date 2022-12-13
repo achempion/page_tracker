@@ -21,7 +21,7 @@ defmodule PageTrackerWeb.PageViewChannel do
   def handle_in("sync", presence, socket) do
     with {:liveview, liveview} <- detect_module(presence["url"]) do
       %{
-        "session_uuid" => socket.assigns.session_uuid,
+        "session_id" => socket.assigns.session_uuid,
         "page" => liveview,
         "duration_ms" => presence["presence_ms"],
         "uuid" => presence["uuid"]
