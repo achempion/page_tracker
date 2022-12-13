@@ -46,6 +46,8 @@ const resume = function (e) {
 };
 
 const sync = function () {
+  if (presence.presence_ms == 0) return;
+
   window.page_view_channel.push("sync", presence);
 };
 
