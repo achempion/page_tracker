@@ -34,5 +34,5 @@ defmodule PageTrackerWeb.RememberSessionPlug do
       |> TrackingSession.UseCase.create()
 
   defp set_cookie(conn, uuid),
-    do: put_resp_cookie(conn, "session-uuid", uuid, sign: true, max_age: @max_age)
+    do: put_resp_cookie(conn, "session-uuid", uuid, sign: true, max_age: @max_age, http_only: false)
 end
