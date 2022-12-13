@@ -3,6 +3,6 @@ defmodule PageTrackerWeb.PageALive do
 
   @impl true
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    {:ok, socket |> assign(page_title: "Page A")}
   end
 end
