@@ -6,7 +6,7 @@ defmodule PageTracker.Repo.Migrations.CreatePageViews do
       add :session_id, :uuid
       add :page, :string
       add :duration_ms, :integer
-      add :data, :map
+      add :data, :json
       add :uuid, :uuid
 
       timestamps()
