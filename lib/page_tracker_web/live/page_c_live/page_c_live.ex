@@ -11,7 +11,7 @@ defmodule PageTrackerWeb.PageCLive do
   @impl true
   def handle_params(params, _url, socket) do
     tab = params["tab"] || if(connected?(socket), do: Enum.random(~w[tab_1 tab_2]))
-    title_tab = tab |> String.capitalize() |> String.replace("_", " ")
+    title_tab = (tab || "") |> String.capitalize() |> String.replace("_", " ")
 
     {:noreply,
      assign(
