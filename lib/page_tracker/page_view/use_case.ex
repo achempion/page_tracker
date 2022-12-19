@@ -10,7 +10,6 @@ defmodule PageTracker.PageView.UseCase do
     |> where(uuid: ^page_view["uuid"])
     |> update(set: [duration_ms: ^page_view["duration_ms"]])
     |> Repo.update_all([])
-    |> IO.inspect()
     |> case do
       {1, _} ->
         :ok
